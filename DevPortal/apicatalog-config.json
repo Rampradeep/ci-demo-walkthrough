@@ -1,0 +1,14 @@
+{
+   "fields":{
+      "field_business_unit":"Petstore"
+   },
+   "taxonomy_terms":[
+      {
+         "vocabulary":"api_category",
+         "field":"field_categories",
+         "data":[
+            "Mobile"
+         ]
+      }
+   ]
+}
