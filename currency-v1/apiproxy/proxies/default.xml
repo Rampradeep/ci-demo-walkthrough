@@ -19,7 +19,6 @@
   </PostFlow>
   <HTTPProxyConnection>
     <BasePath>/currency-v1</BasePath>
-    <VirtualHost>default</VirtualHost>
     <VirtualHost>secure</VirtualHost>
   </HTTPProxyConnection>
   <RouteRule name="default">
