@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TargetEndpoint name="default">
-  <Description>Sample Voucher Service</Description>
+  <Description>Voucher Service</Description>
   <PreFlow name="PreFlow">
     <Request>
       <Step>

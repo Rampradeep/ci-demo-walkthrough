@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ProxyEndpoint name="default">
-  <Description>Sample Voucher Service</Description>
+  <Description>Voucher Service</Description>
   <PreFlow name="PreFlow">
     <Request/>
     <Response/>
@@ -19,6 +19,7 @@
   </PostFlow>
   <HTTPProxyConnection>
     <BasePath>/currency-v1</BasePath>
+    <VirtualHost>default</VirtualHost>
     <VirtualHost>secure</VirtualHost>
   </HTTPProxyConnection>
   <RouteRule name="default">

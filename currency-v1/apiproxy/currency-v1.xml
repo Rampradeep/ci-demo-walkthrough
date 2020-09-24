@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <APIProxy revison="1" name="currency-v1">
-  <CreatedAt>1600919212</CreatedAt>
-  <Description>Sample Voucher Service</Description>
+  <CreatedAt>1600959949</CreatedAt>
+  <Description>Voucher Service</Description>
   <ProxyEndpoints>
     <ProxyEndpoint>default</ProxyEndpoint>
   </ProxyEndpoints>
