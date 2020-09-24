@@ -36,7 +36,7 @@
         <artifactId>DevPortal</artifactId>
     </rootModule>
     <rootPOM>DevPortal/pom.xml</rootPOM>
-    <goals>install -Pdev -Dapigee.smartdocs.config.options=create -Dapigee.smartdocs.config.file=./apicatalog-config.json  -Dcommit=${GIT_COMMIT} -Dbranch=${GIT_BRANCH}</goals>
+    <goals>install -Pdev -Dapigee.smartdocs.config.options=update -Dapigee.smartdocs.config.file=./apicatalog-config.json  -Dcommit=${GIT_COMMIT} -Dbranch=${GIT_BRANCH}</goals>
     <aggregatorStyleBuild>true</aggregatorStyleBuild>
     <incrementalBuild>false</incrementalBuild>
     <ignoreUpstremChanges>true</ignoreUpstremChanges>
