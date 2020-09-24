@@ -1,5 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="1" name="currency-v1">
-    <ConfigurationVersion minorVersion="0" majorVersion="4"/>
-	<Description>@description</Description>
+<?xml version="1.0"?>
+<APIProxy revison="1" name="currency-v1">
+  <CreatedAt>1600918516</CreatedAt>
+  <Description>Sample Voucher Service</Description>
+  <ProxyEndpoints>
+    <ProxyEndpoint>default</ProxyEndpoint>
+  </ProxyEndpoints>
+  <TargetEndpoints>
+    <TargetEndpoint>default</TargetEndpoint>
+  </TargetEndpoints>
 </APIProxy>
