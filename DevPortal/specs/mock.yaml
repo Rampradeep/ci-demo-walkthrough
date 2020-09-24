@@ -1,112 +1,119 @@
-openapi: "3.0.0"
+openapi: 3.0.1
 info:
+  title: Sample Voucher Service
+  description: Find list of  Voucher
   version: 1.0.0
-  title: Swagger Petstore
-  description: Swagger Petstore Description
-  license:
-    name: MIT
 servers:
-  - url: http://petstore.swagger.io/v1
+  - url: 'http://localhost/voucher'
+x-a127-services:
+  add-headers-x-api-key:
+    provider: x-headers
+    apply:
+      pipe: request
+      endPoint: target
+    options:
+      displayName: Add AWS api key header
+      headers:
+        x-api-key:
+          type: string
+          default: "random_api_key"
+          description: >
+            x-api-key header
 paths:
-  /pets:
-    get:
-      summary: List all pets
-      operationId: listPets
-      tags:
-        - pets
-      parameters:
-        - name: limit
-          in: query
-          description: How many items to return at one time (max 100)
-          required: false
-          schema:
-            type: integer
-            format: int32
-      responses:
-        '200':
-          description: A paged array of pets
-          headers:
-            x-next:
-              description: A link to the next page of responses
-              schema:
-                type: string
-          content:
-            application/json:    
-              schema:
-                $ref: "#/components/schemas/Pets"
-        default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
+  /findVoucher:
     post:
-      summary: Create a pet
-      operationId: createPets
+      summary: Find Voucher Details
+      description: Find Voucher details
+      operationId: findVoucher
       tags:
-        - pets
-      responses:
-        '201':
-          description: Null response
-        default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
-  /pets/{petId}:
-    get:
-      summary: Info for a specific pet
-      operationId: showPetById
-      tags:
-        - pets
+        - Voucher
       parameters:
-        - name: petId
-          in: path
-          required: true
-          description: The id of the pet to retrieve
-          schema:
-            type: string
+        - $ref: '#/components/parameters/ChannelId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetVoucherRequest'
       responses:
         '200':
-          description: Expected response to a valid request
+          description: "Ok"
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Pet"
+                $ref: '#/components/schemas/GetVoucherResponse'
+              example: {
+                "resultStatus": {
+                  "status": "SUCCESS",
+                  "statusCode": null,
+                  "errorCode": null,
+                  "errorMessage": null
+                },
+                "voucher": null
+              }
         default:
-          description: unexpected error
+          description: "Unexpected error"
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/ResultStatus'
+
 components:
   schemas:
-    Pet:
+    GetVoucherRequest:
       type: object
-      required:
-        - id
-        - name
+      description: Get Voucher Request
       properties:
-        id:
-          type: integer
-          format: int64
-        name:
+        serviceId:
           type: string
-        tag:
-          type: string
-    Pets:
-      type: array
-      items:
-        $ref: "#/components/schemas/Pet"
-    Error:
+          description: Service Id
+    GetVoucherResponse:
       type: object
-      required:
-        - code
-        - message
+      description: Get Voucher Response
       properties:
-        code:
-          type: integer
-          format: int32
-        message:
+        resultStatus:
+          $ref: '#/components/schemas/ResultStatus'
+        voucher:
+          type: array
+          description: List of vouchers
+          items:
+            $ref: '#/components/schemas/Voucher'
+    Voucher:
+      type: object
+      description: Voucher details
+      properties:
+        number:
           type: string
+          description: Voucher Number
+        type:
+          type: string
+          description: Voucher Type
+        status:
+          type: string
+          description: Voucher Status
+
+    ResultStatus:
+      type: object
+      description: Service Result Status
+      required:
+        - status
+      properties:
+        status:
+          type: string
+          description: Result Status SUCCESS/FAILED
+        statusCode:
+          type: string
+          description: Status Code
+        errorCode:
+          type: string
+          description: Error Code
+        errorMessage:
+          type: string
+          description: Error Message
+  parameters:
+    ChannelId:
+      name: channel-id
+      in: header
+      description: Channel Id
+      schema:
+        type: string
+        example: 20
