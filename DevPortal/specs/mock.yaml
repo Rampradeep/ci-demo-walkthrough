@@ -16,7 +16,7 @@ x-a127-services:
       headers:
         x-api-key:
           type: string
-          default: "random_api_key"
+          default: "no_random_api_key"
           description: >
             x-api-key header
 paths:
