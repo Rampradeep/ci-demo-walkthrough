@@ -16,14 +16,14 @@ x-a127-services:
       headers:
         x-api-key:
           type: string
-          default: "no_random_api_key_7"
+          default: "no_random_api_key_8"
           description: >
             x-api-key header
 paths:
   /findVoucher:
     post:
-      summary: Find Voucher Details-7
-      description: Find Voucher details-7
+      summary: Find Voucher Details-8
+      description: Find Voucher details-8
       operationId: findVoucher
       tags:
         - Voucher
