@@ -4,7 +4,7 @@
   <AssignTo createNew="false" type="request"/>
   <Set>
     <Headers>
-      <Header name="x-api-key">no_random_api_key</Header>
+      <Header name="x-api-key">no_random_api_key_4</Header>
     </Headers>
   </Set>
 </AssignMessage>
