@@ -33,9 +33,9 @@
     <concurrentBuild>false</concurrentBuild>
     <rootModule>
         <groupId>apigee</groupId>
-        <artifactId>currency-v1</artifactId>
+        <artifactId>VoucherService</artifactId>
     </rootModule>
-    <rootPOM>currency-v1/pom.xml</rootPOM>
+    <rootPOM>VoucherService/pom.xml</rootPOM>
     <goals>install -Ptest -Ddeployment.suffix= -Dcommit=${GIT_COMMIT} -Dbranch=${GIT_BRANCH}</goals>
     <aggregatorStyleBuild>true</aggregatorStyleBuild>
     <incrementalBuild>false</incrementalBuild>
