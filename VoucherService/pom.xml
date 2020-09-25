@@ -5,7 +5,8 @@
 	<groupId>apigee</groupId>
 	<artifactId>VoucherService</artifactId>
 	<version>-</version>
-	<name>currency-${deployment.suffix}v1</name>
+	<name>VoucherService-${deployment.suffix}v1</name>
+	<!--name>currency-${deployment.suffix}v1</name-->
 	<packaging>pom</packaging>
 
 	<pluginRepositories>
