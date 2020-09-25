@@ -22,8 +22,8 @@ x-a127-services:
 paths:
   /findVoucher:
     post:
-      summary: Find Voucher Details
-      description: Find Voucher details
+      summary: Find Voucher Details-3
+      description: Find Voucher details-3
       operationId: findVoucher
       tags:
         - Voucher
