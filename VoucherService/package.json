@@ -1,5 +1,5 @@
 {
-	"name": "currency-v1",
+	"name": "VoucherService",
 	"version": "1.0.0",
 	"devDependencies": {
 		"apickli": "^1.7.0",
